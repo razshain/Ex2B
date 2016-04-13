@@ -1,3 +1,5 @@
+install.packages("rmarkdown")
+library(rmarkdown)
 install.packages("plyr")
 install.packages("jsonlite")
 install.packages("descr")
@@ -69,9 +71,11 @@ write.csv(weather.data,'weatherData.csv')
 df<- as.data.frame(weather.data,col.names = names(weather.data), stringsAsFactors = default.stringsAsFactors())
 df<-as.data.frame(weather.data, row.names = NULL, optional = FALSE,cut.names = FALSE, col.names = names(weather.data), fix.empty.names = TRUE,stringsAsFactors = default.stringsAsFactors())
 
-#df$city<- as.numeric(df$city)
+barplot(table(df$city),col="pink",main="")
+
+df$city<- NULL
 df$data.1..date.mon<- NULL #as.numeric(df$data.1..date.mon)
-df$hour<-NULL
+df$hour<-as.numeric(df$hour)
 df$tempi<- as.numeric(df$tempi)
 df$tempm<- as.numeric(df$tempm)
 df$tempi<- as.numeric(df$tempi)
@@ -90,12 +94,12 @@ df$pressurei<- as.numeric(df$pressurei)
 df$windchillm<- as.numeric(df$windchillm)
 sapply(df, class)
 
-barplot(table(df$city),col="pink",main="")
-#weather.data$hour <- as.numeric(weather.data$hour)
+
+
 hist(df$tempm,col="green")
-abline(v=12,lwd=2,col="red")
 abline(v=median(df$tempm),lwd=4,col="yellow")
-#boxplot(Number_of_Vehicles~Number_of_Casualties,data=df,col="red")
+
+boxplot(hum~hour,data=df,col="red")
 
 ## build a correlation matrix based on the first 100000 rows ##
 cor(df[sapply(df, function(x) !is.numeric(x))])
