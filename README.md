@@ -140,7 +140,7 @@ boxplot(hum~hour,data=df,col="red")
 
 ```
 
-![alt text](https://github.com/razshain/Ex2/blob/master/hum.png "p2")
+![alt text](https://github.com/razshain/Ex2B/blob/master/hum.png "p2")
 
 
 כמו כן רצינו לדעת מה התפלגות הטמפטורה בערים בישראל, לכן לקחנו ערים שונות והצגנו את ההתפלגות, הקו הצהוב מסמל את החציון
@@ -151,7 +151,7 @@ abline(v=median(df$tempm),lwd=4,col="yellow")
 
 ```
 
-![alt text](https://github.com/razshain/Ex2/blob/master/temp.png "p3")
+![alt text](https://github.com/razshain/Ex2B/blob/master/temp.png "p3")
 
 
 לסיכום: ניתן לראות שרוב המידע בין הערים זהה בסופו של דבר, מזג האויר בארץ ישראל בדרך כלל חם במיוחד בשעות הצהריים. כמו כן לא בצענו צמצום ממדים אך ניתן לבצע זאת על עמודות בעלות קורלציה גבוהה.
